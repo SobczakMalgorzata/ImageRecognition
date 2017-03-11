@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition", "ImageRecognition\ImageRecognition.csproj", "{BA2A85CF-585D-4032-8AED-FB77D91E2C6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.WPFApp", "ImageRecognition.WPFApp\ImageRecognition.WPFApp.csproj", "{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.MVC", "ImageRecognition.MVC\ImageRecognition.MVC.csproj", "{3D24D67C-E066-4FAF-B6D1-A4DD6AFC6CA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ObjectDetectionLibrary", "ImageRecognition.ObjectDetectionLibrary\ImageRecognition.ObjectDetectionLibrary.csproj", "{DE771127-6CA6-45C9-872C-F534BFCA3E01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA2A85CF-585D-4032-8AED-FB77D91E2C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA2A85CF-585D-4032-8AED-FB77D91E2C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA2A85CF-585D-4032-8AED-FB77D91E2C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA2A85CF-585D-4032-8AED-FB77D91E2C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D24D67C-E066-4FAF-B6D1-A4DD6AFC6CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D24D67C-E066-4FAF-B6D1-A4DD6AFC6CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D24D67C-E066-4FAF-B6D1-A4DD6AFC6CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D24D67C-E066-4FAF-B6D1-A4DD6AFC6CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE771127-6CA6-45C9-872C-F534BFCA3E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE771127-6CA6-45C9-872C-F534BFCA3E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE771127-6CA6-45C9-872C-F534BFCA3E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE771127-6CA6-45C9-872C-F534BFCA3E01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
