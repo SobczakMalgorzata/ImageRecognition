@@ -6,9 +6,24 @@ using System.Threading.Tasks;
 
 namespace ImageRecognition.ObjectDetectionLibrary
 {
-    class ImageCanalMatrix : IImageCanalMatrix
+    public class ImageCanalMatrix : IImageCanalMatrix
     {
-        private int[,] imageMatrix { get; set; }
+        public int[,] imageMatrix { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
+        public ImageCanalMatrix()
+        {
+            imageMatrix = new int[1, 1] { { -1} };
+            Width = 0;
+            Height = 0;
+        }
+
+        public ImageCanalMatrix(int[,] i)
+        {
+            imageMatrix = i;
+            Width = i.GetLength(0);
+            Height = i.GetLength(1);
+        }
     }
 }

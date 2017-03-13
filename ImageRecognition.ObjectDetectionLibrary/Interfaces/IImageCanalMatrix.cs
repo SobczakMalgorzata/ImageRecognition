@@ -8,6 +8,8 @@ namespace ImageRecognition.ObjectDetectionLibrary
 {
     public interface IImageCanalMatrix
     {
-
+        int[,] imageMatrix { get; set; }
+        int Width { get; set; }
+        int Height { get; set; }
     }
 }
