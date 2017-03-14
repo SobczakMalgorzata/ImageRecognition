@@ -14,5 +14,6 @@ namespace ImageRecognition.ObjectDetectionLibrary
         int Height { get; set; }
 
         Bitmap GetBitmap();
+        Bitmap EdgeDetection();
     }
 }

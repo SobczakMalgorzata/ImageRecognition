@@ -9,9 +9,9 @@ namespace ImageRecognition.ObjectDetectionLibrary
 {
     class ColorImageMatrix : IColorImageMatrix
     {
-        private IImageCanalMatrix red { get; set; }
-        private IImageCanalMatrix green { get; set; }
-        private IImageCanalMatrix blue { get; set; }
+        private ImageCanalMatrix red { get; set; }
+        private ImageCanalMatrix green { get; set; }
+        private ImageCanalMatrix blue { get; set; }
         private int Width { get; set; }
         private int Height { get; set; }
 
@@ -19,9 +19,9 @@ namespace ImageRecognition.ObjectDetectionLibrary
         {
             Width = m.Width;
             Height = m.Height;
-            red.imageMatrix = new int[Width, Height];
-            green.imageMatrix = new int[Width, Height];
-            blue.imageMatrix = new int[Width, Height];
+            red = new ImageCanalMatrix(new int[Width, Height]);
+            green = new ImageCanalMatrix(new int[Width, Height]);
+            blue = new ImageCanalMatrix(new int[Width, Height]);
             for (int i = 0; i < Width; i++)
             {
                 for (int j = 0; j < Height; j++)
@@ -39,6 +39,7 @@ namespace ImageRecognition.ObjectDetectionLibrary
                 }
             }
         }
+
         public Bitmap GetBitmap()
         {
             Bitmap currentBitmap = new Bitmap(Width, Height);
@@ -46,7 +47,27 @@ namespace ImageRecognition.ObjectDetectionLibrary
             {
                 for (int j = 0; j < Height; j++)
                 {
-                    Color c = System.Drawing.Color.FromArgb(red.imageMatrix[i, j], green.imageMatrix[i, j], blue.imageMatrix[i, j]);
+                    Color c = Color.FromArgb(red.imageMatrix[i, j], green.imageMatrix[i, j], blue.imageMatrix[i, j]);
+                    currentBitmap.SetPixel(i, j, c);
+                }
+            }
+            return currentBitmap;
+        }
+
+        public Bitmap EdgeDetection()
+        {
+            Bitmap currentBitmap = new Bitmap(Width, Height);
+            int[,] tmpRed = red.GetEdges();
+            int[,] tmpGreen = green.GetEdges();
+            int[,] tmpBlue = blue.GetEdges();
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    Color c = Color.FromArgb(255, 255, 255);
+                    if (tmpRed[i, j]==0 || tmpGreen[i, j] == 0 || tmpBlue[i, j] == 0)
+                        c = Color.FromArgb(0, 0, 0);
+                    
                     currentBitmap.SetPixel(i, j, c);
                 }
             }

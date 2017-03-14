@@ -14,15 +14,29 @@ namespace ImageRecognition.ObjectDetectionLibrary
 
         public ImageInstance()
         {
-            
+
         }
 
         public ImageInstance(Bitmap mat)
         {
             imageMatrix = new ColorImageMatrix(mat);
             grayScaleMatrix = new GrayScaleMatrix(mat);
-            
         }
 
+        public Bitmap GetColorBitmap()
+        {
+            return imageMatrix.GetBitmap();
+        }
+
+        public Bitmap GetGrayScaleBitmap()
+        {
+            return grayScaleMatrix.GetBitmap();
+        }
+
+        public Bitmap EdgeDetectionBitmap()
+        {
+            Bitmap temp = imageMatrix.EdgeDetection();
+            return temp;
+        }
     }
 }

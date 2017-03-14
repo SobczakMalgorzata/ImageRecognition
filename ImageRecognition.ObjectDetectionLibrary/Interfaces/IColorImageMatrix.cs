@@ -10,5 +10,6 @@ namespace ImageRecognition.ObjectDetectionLibrary
     public interface IColorImageMatrix
     {
         Bitmap GetBitmap();
+        Bitmap EdgeDetection();
     }
 }

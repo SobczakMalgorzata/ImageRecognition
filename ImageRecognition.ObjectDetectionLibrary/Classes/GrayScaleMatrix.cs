@@ -11,6 +11,8 @@ namespace ImageRecognition.ObjectDetectionLibrary
     {
         public GrayScaleMatrix(Bitmap m)
         {
+            Width = m.Width;
+            Height = m.Height;
             imageMatrix = new int[m.Width, m.Height];
             for (int i = 0; i < m.Width; i++)
             {
