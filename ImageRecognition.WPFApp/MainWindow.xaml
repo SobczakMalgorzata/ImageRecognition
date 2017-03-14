@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <MenuItem Name="ImageLoad" Header="Load Image" Click="LoadImage"/>
+            <!-- <MenuItem Name="SaveAs0" Header="Save As" Click="SaveImageAs"/> -->
+            <!-- <MenuItem Name="BlackWhite" Header="Black and white" Click="BlackWhite_Click"/> -->
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>                
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Image Name="board"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"  Content="Color" Click="Color_Click" />
+                <Button Grid.Row="1" Content="Black and White" Click="BlackAndWhite_Click" />
+                <Button Grid.Row="2" Content="Edge Detection" Click="EdgeDetection_Click"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
