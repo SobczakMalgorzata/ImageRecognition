@@ -109,6 +109,26 @@ namespace ImageRecognition.ObjectDetectionLibrary
             return imgMatrix;
         }
 
+        public int[,] RoundValues(int interval)
+        {
+            int[,] imgMatrix;
+            int intervalLength = 256 / interval;
+            imgMatrix = new int[Width, Height];
+            for (int i = 0; i < interval; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    for (int k = 0; k < Height; k++)
+                    {
+                        if ((imageMatrix[j, k]< ((i + 1) * intervalLength)) && (imageMatrix[j, k] > (i * intervalLength)))
+                            imgMatrix[j, k] = i * intervalLength;
+                    }
+                }
+            }
+
+            return imgMatrix;
+        }
+
         public int[,] Convolution(int[,] f, int d, int offset)
         {
             int[,] tmp = new int[Width,Height];

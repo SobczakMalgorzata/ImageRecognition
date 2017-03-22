@@ -40,6 +40,16 @@ namespace ImageRecognition.ObjectDetectionLibrary
             }
         }
 
+        public int GetWidth()
+        {
+            return Width;
+        }
+
+        public int GetHeight()
+        {
+            return Height;
+        }
+
         public Bitmap GetBitmap()
         {
             Bitmap currentBitmap = new Bitmap(Width, Height);
@@ -68,6 +78,23 @@ namespace ImageRecognition.ObjectDetectionLibrary
                     if (tmpRed[i, j]==0 || tmpGreen[i, j] == 0 || tmpBlue[i, j] == 0)
                         c = Color.FromArgb(0, 0, 0);
                     
+                    currentBitmap.SetPixel(i, j, c);
+                }
+            }
+            return currentBitmap;
+        }
+        public Bitmap ColorSegmentation(int interval)
+        {
+            Bitmap currentBitmap = new Bitmap(Width, Height);
+            int[,] tmpRed = red.RoundValues(interval);
+            int[,] tmpGreen = green.RoundValues(interval);
+            int[,] tmpBlue = blue.RoundValues(interval);
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    Color c = Color.FromArgb(tmpRed[i, j], tmpGreen[i, j], tmpBlue[i, j]);
+
                     currentBitmap.SetPixel(i, j, c);
                 }
             }

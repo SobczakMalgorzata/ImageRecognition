@@ -91,5 +91,17 @@ namespace ImageRecognition.WPFApp
             Bitmap img = image.EdgeDetectionBitmap();
             this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
         }
+
+        private void Segmentation_Click(object sender, RoutedEventArgs e)
+        {
+            Bitmap img = image.GetSegmentationBitmap();
+            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+        }
+
+        private void SegmentationWithEdges_Click(object sender, RoutedEventArgs e)
+        {
+            Bitmap img = image.GetSegmentationWithEdges();
+            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+        }
     }
 }
