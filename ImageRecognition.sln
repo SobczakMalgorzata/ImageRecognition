@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.WPFApp", "ImageRecognition.WPFApp\ImageRecognition.WPFApp.csproj", "{789CEFE9-1EC6-4C05-BAFD-84E6C9BAC628}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ObjectDetectionLibrary", "ImageRecognition.ObjectDetectionLibrary\ImageRecognition.ObjectDetectionLibrary.csproj", "{DE771127-6CA6-45C9-872C-F534BFCA3E01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ObjectDetectionLibrary.Tests", "ImageRecognition.ObjectDetectionLibrary.Tests\ImageRecognition.ObjectDetectionLibrary.Tests.csproj", "{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ImageObject", "ImageRecognition.ImageObject\ImageRecognition.ImageObject.csproj", "{51938AFE-3F08-4DEF-A129-125F356C580E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51938AFE-3F08-4DEF-A129-125F356C580E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51938AFE-3F08-4DEF-A129-125F356C580E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51938AFE-3F08-4DEF-A129-125F356C580E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51938AFE-3F08-4DEF-A129-125F356C580E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
