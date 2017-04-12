@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ObjectDete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.ImageObject", "ImageRecognition.ImageObject\ImageRecognition.ImageObject.csproj", "{51938AFE-3F08-4DEF-A129-125F356C580E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.SemanticEngine", "ImageRecognition.SemanticEngine\ImageRecognition.SemanticEngine.csproj", "{CFE364BE-C350-48A0-AF64-2D5D0A5D41A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{51938AFE-3F08-4DEF-A129-125F356C580E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51938AFE-3F08-4DEF-A129-125F356C580E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51938AFE-3F08-4DEF-A129-125F356C580E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE364BE-C350-48A0-AF64-2D5D0A5D41A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE364BE-C350-48A0-AF64-2D5D0A5D41A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE364BE-C350-48A0-AF64-2D5D0A5D41A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE364BE-C350-48A0-AF64-2D5D0A5D41A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

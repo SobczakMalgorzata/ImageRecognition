@@ -8,7 +8,11 @@ namespace ImageRecognition.ImageObject
 {
     public static class Constants
     {
-        public const int Unknown = -1;
-        public const string NotRecognised = "Not Rcognised";
+        public const int UNKNOWN = -1;
+        public const string NOTRRECOGNISED = "Not Rcognised";
+        public const string LEFT = "Left";
+        public const string RIGHT = "Right";
+        public const string BELOW = "Below";
+        public const string ABOVE = "Above";
     }
 }
