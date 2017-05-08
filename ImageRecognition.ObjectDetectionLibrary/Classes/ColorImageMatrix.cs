@@ -40,6 +40,26 @@ namespace ImageRecognition.ObjectDetectionLibrary
             }
         }
 
+        public ColorImageMatrix(ColorImageMatrix m)
+        {
+            Width = m.Width;
+            Height = m.Height;
+            red = new ImageCanalMatrix(new int[Width, Height]);
+            green = new ImageCanalMatrix(new int[Width, Height]);
+            blue = new ImageCanalMatrix(new int[Width, Height]);
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    
+                    red.imageMatrix[i, j] = m.red.imageMatrix[i,j];
+                    green.imageMatrix[i, j] = m.green.imageMatrix[i, j];
+                    blue.imageMatrix[i, j] = m.blue.imageMatrix[i, j];
+                    
+                }
+            }
+        }
+
         public int GetWidth()
         {
             return Width;
@@ -96,6 +116,24 @@ namespace ImageRecognition.ObjectDetectionLibrary
                     Color c = Color.FromArgb(tmpRed[i, j], tmpGreen[i, j], tmpBlue[i, j]);
 
                     currentBitmap.SetPixel(i, j, c);
+                }
+            }
+            return currentBitmap;
+        }
+
+        public ColorImageMatrix ColorSegmentationMatrix(int interval) 
+        {
+            ColorImageMatrix currentBitmap = new ColorImageMatrix(this);
+            int[,] tmpRed = red.RoundValues(interval);
+            int[,] tmpGreen = green.RoundValues(interval);
+            int[,] tmpBlue = blue.RoundValues(interval);
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    Color c = Color.FromArgb(tmpRed[i, j], tmpGreen[i, j], tmpBlue[i, j]);
+
+                    //currentBitmap.SetPixel(i, j, c);
                 }
             }
             return currentBitmap;

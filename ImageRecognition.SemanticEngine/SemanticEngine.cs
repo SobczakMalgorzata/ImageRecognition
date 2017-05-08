@@ -11,14 +11,14 @@ namespace ImageRecognition.SemanticEngine
 {
     public class SemanticEngine
     {
-        IGraph g = new OntologyGraph();
+        //IGraph g = new OntologyGraph();
 
         //Create some Objects Literal
-        static INode Roof = g.CreateLiteralNode("Roof");
-        static INode Wall = g.CreateLiteralNode("Wall");
-        static INode Window = g.CreateLiteralNode("Window");
+        //static INode Roof = g.CreateLiteralNode("Roof");
+        //static INode Wall = g.CreateLiteralNode("Wall");
+        //static INode Window = g.CreateLiteralNode("Window");
 
-        OntologyProperty RoofColor = new OntologyProperty(Roof, g);
+        //OntologyProperty RoofColor = new OntologyProperty(Roof, g);
 
         //ILiteralNode above = g.CreateLiteralNode("Above");
         //ILiteralNode below = g.CreateLiteralNode("Below");

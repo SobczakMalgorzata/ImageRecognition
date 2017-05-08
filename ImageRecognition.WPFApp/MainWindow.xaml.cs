@@ -24,7 +24,7 @@ namespace ImageRecognition.WPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        ImageInstance image;
+        ImageObject.ObjectDetectingOnImage image;
         
         public MainWindow()
         {
@@ -54,15 +54,22 @@ namespace ImageRecognition.WPFApp
                             //currentimage = op.FileName; 
                             Uri currentImage = new Uri(op.FileName);
                             Bitmap img = new Bitmap(myStream);
+
+                            image = new ImageObject.ObjectDetectingOnImage(img);
+
                             //displaing pictures
                             int myExt = op.FilterIndex;
                             //getting data from picture
                             
                             //img = image.GetColorBitmap();
-                            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-
+                            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(image.segmentedImage.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(image.segmentedImage.Width, image.segmentedImage.Height));
+                            Bitmap img1 = image.horizontalProjections[0];
+                            this.horizontalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img1.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+                            img1 = image.verticalProjections[0];
+                            this.verticalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img1.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+                            
                             //image.Initialization(img);
-                            image = new ImageInstance(img);
+                            //image = new ImageInstance(img);
                         }
                     }
                 }
@@ -73,35 +80,6 @@ namespace ImageRecognition.WPFApp
                 myStream.Dispose();
             }
         }
-
-        private void BlackAndWhite_Click(object sender, RoutedEventArgs e)
-        {
-            Bitmap img = image.GetGrayScaleBitmap();
-            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-        }
-
-        private void Color_Click(object sender, RoutedEventArgs e)
-        {
-            Bitmap img = image.GetColorBitmap();
-            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-        }
-
-        private void EdgeDetection_Click(object sender, RoutedEventArgs e)
-        {
-            Bitmap img = image.EdgeDetectionBitmap();
-            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-        }
-
-        private void Segmentation_Click(object sender, RoutedEventArgs e)
-        {
-            Bitmap img = image.GetSegmentationBitmap();
-            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-        }
-
-        private void SegmentationWithEdges_Click(object sender, RoutedEventArgs e)
-        {
-            Bitmap img = image.GetSegmentationWithEdges();
-            this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-        }
+        
     }
 }

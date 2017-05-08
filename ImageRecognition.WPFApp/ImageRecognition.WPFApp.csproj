@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImageRecognition.ImageObject\ImageRecognition.ImageObject.csproj">
+      <Project>{51938afe-3f08-4def-a129-125f356c580e}</Project>
+      <Name>ImageRecognition.ImageObject</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImageRecognition.ObjectDetectionLibrary\ImageRecognition.ObjectDetectionLibrary.csproj">
       <Project>{de771127-6ca6-45c9-872c-f534bfca3e01}</Project>
       <Name>ImageRecognition.ObjectDetectionLibrary</Name>

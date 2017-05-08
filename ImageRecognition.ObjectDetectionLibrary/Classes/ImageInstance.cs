@@ -11,6 +11,7 @@ namespace ImageRecognition.ObjectDetectionLibrary
     {
         private ColorImageMatrix imageMatrix;
         private GrayScaleMatrix grayScaleMatrix;
+        private ColorImageMatrix segmentedMatrix;
 
         public ImageInstance()
         {
@@ -21,6 +22,7 @@ namespace ImageRecognition.ObjectDetectionLibrary
         {
             imageMatrix = new ColorImageMatrix(mat);
             grayScaleMatrix = new GrayScaleMatrix(mat);
+            segmentedMatrix = imageMatrix.ColorSegmentationMatrix(4);
         }
 
         public Bitmap GetColorBitmap()
@@ -44,7 +46,7 @@ namespace ImageRecognition.ObjectDetectionLibrary
         {
             return imageMatrix.ColorSegmentation(4);
         }
-
+        
         public Bitmap GetSegmentationWithEdges()
         {
             return GetBlackAndColorBitmap(imageMatrix.ColorSegmentation(4), imageMatrix.EdgeDetection());
