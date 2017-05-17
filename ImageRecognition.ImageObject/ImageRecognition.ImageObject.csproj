@@ -47,5 +47,11 @@
     <Compile Include="ObjectDetectingOnImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageRecognition.SemanticEngine\ImageRecognition.SemanticEngine.csproj">
+      <Project>{cfe364be-c350-48a0-af64-2d5d0a5d41a2}</Project>
+      <Name>ImageRecognition.SemanticEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

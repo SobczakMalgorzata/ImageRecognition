@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImageRecognition.ImageObject;
+using ImageRecognition.SemanticEngine;
 
 namespace ImageRecognition.ImageObject
 {
@@ -58,7 +60,7 @@ namespace ImageRecognition.ImageObject
                         colorHistogram[pixel.G]++;
                         colorHistogram[pixel.B]++;
                     }
-                    int[] currentColor = new int[] { pixel.R, pixel.G, pixel.R};
+                    int[] currentColor = new int[] { pixel.R, pixel.G, pixel.B};
                     bool contains = true;
                     foreach (int[] o in colorList)
                     {
@@ -99,9 +101,9 @@ namespace ImageRecognition.ImageObject
                 {
                     veticalProjectionsArray[index, j] = 0;
                 }
-                Bitmap image = new Bitmap(Width, Height);
-                horizontalProjections.Add(image);
-                verticalProjections.Add(image);
+
+                horizontalProjections.Add(new Bitmap(Width, Height));
+                verticalProjections.Add(new Bitmap(Width, Height));
             }
             for (int i = 0; i < Width; i++)
             {
@@ -109,7 +111,7 @@ namespace ImageRecognition.ImageObject
                 {
                     foreach (int[] o in colorList)
                     {
-                        if (imageMatrix[i, j, 0] == o[0] && imageMatrix[i, j, 1] == o[1] && imageMatrix[i, j, 2] == o[2])
+                        if (segmentedImageMatrix[i, j, 0] == o[0] && segmentedImageMatrix[i, j, 1] == o[1] && segmentedImageMatrix[i, j, 2] == o[2])
                         {
                             int index = colorList.IndexOf(o);
                             horzontalProjectionsArray[index, i]++;
@@ -129,35 +131,36 @@ namespace ImageRecognition.ImageObject
                     segmentedImage.SetPixel(i, j, c);
                     foreach (int[] o in colorList)
                     {
-                        if (imageMatrix[i, j, 0] == o[0] && imageMatrix[i, j, 1] == o[1] && imageMatrix[i, j, 2] == o[2])
+                        
+                        int index = colorList.IndexOf(o);
+                        if (horzontalProjectionsArray[index, i] > j)
                         {
-                            int index = colorList.IndexOf(o);
-                            if (horzontalProjectionsArray[index, i] < j)
-                            {
-                                c = Color.FromArgb(0, 0, 0);
-                                horizontalProjections[index].SetPixel(i, j, c);
-                            }
-                            else
-                            {
-                                c = Color.FromArgb(255, 255, 255);
-                                horizontalProjections[index].SetPixel(i, j, c);
-                            }
-
-                            if (veticalProjectionsArray[index, j] < i)
-                            {
-                                c = Color.FromArgb(0, 0, 0);
-                                verticalProjections[index].SetPixel(i, j, c);
-                            }
-                            else
-                            {
-                                c = Color.FromArgb(255, 255, 255);
-                                verticalProjections[index].SetPixel(i, j, c);
-                            }
+                            c = Color.FromArgb(0, 0, 0);
+                            horizontalProjections[index].SetPixel(i, j, c);
                         }
+                        else
+                        {
+                            c = Color.FromArgb(255, 255, 255);
+                            horizontalProjections[index].SetPixel(i, j, c);
+                        }
+
+                        if (veticalProjectionsArray[index, j] > i)
+                        {
+                            c = Color.FromArgb(0, 0, 0);
+                            verticalProjections[index].SetPixel(i, j, c);
+                        }
+                        else
+                        {
+                            c = Color.FromArgb(255, 255, 255);
+                            verticalProjections[index].SetPixel(i, j, c);
+                        }
+                        
                     }
 
                 }
             }
+            OntologyEngine myOntology = new OntologyEngine();
+            int k = 0;
         }
     }
 }

@@ -37,11 +37,11 @@ namespace ImageRecognition.WPFApp
             OpenFileDialog op = new OpenFileDialog();
             op.Title = "Select a picture";
             op.Filter =
-                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                 "Bit Map (*.bmp)|*.bmp|" +
+                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                 "Portable Network Graphic (*.png)|*.png|" +
                 "Portable Network Graphic (*.gif)|*.gif";
-            op.DefaultExt = ".jpg";
+            op.DefaultExt = ".bmp";
             if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.Stream myStream = null;
@@ -60,13 +60,14 @@ namespace ImageRecognition.WPFApp
                             //displaing pictures
                             int myExt = op.FilterIndex;
                             //getting data from picture
-                            
+
                             //img = image.GetColorBitmap();
+                            int index = 2;
                             this.board.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(image.segmentedImage.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(image.segmentedImage.Width, image.segmentedImage.Height));
-                            Bitmap img1 = image.horizontalProjections[0];
-                            this.horizontalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img1.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
-                            img1 = image.verticalProjections[0];
-                            this.verticalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(img1.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+                            //Bitmap img2 = image.verticalProjections[index];
+                            this.verticalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(image.verticalProjections[index].GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
+                            //Bitmap img1 = image.horizontalProjections[index];
+                            this.horizontalBoard.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(image.horizontalProjections[index].GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(img.Width, img.Height));
                             
                             //image.Initialization(img);
                             //image = new ImageInstance(img);
