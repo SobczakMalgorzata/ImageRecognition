@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/malgorzata/buildingimage#"
+	xml:base="http://www.example.org/malgorzata/buildingimage"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:buildingimage="http://www.example.org/malgorzata/buildingimage#01">
+	<owl:Ontology rdf:about="http://www.example.org/malgorzata/buildingimage"/>
+	
+	<owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
+		<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+		<rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Wall"/>
+					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Window"/>
+					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Door"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	
+</rdf:RDF>

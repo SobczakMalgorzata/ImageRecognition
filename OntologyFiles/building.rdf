@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+]>
+<rdf:RDF xml:base="http://example.org/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:ns0="http://example.org/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="http://example.org/door">
+    <ns0:within rdf:resource="http://example.org/wall" />
+  </rdf:Description>
+  <ns0:roofClass rdf:about="http://example.org/roof">
+    <ns0:above rdf:resource="http://example.org/door" />
+    <ns0:above rdf:resource="http://example.org/wall" />
+    <ns0:above rdf:resource="http://example.org/window" />
+  </ns0:roofClass>
+  <ns0:wallClass rdf:about="http://example.org/wall">
+    <rdf:type rdf:resource="http://example.org/wallClass" />
+  </ns0:wallClass>
+  <ns0:windowClass rdf:about="http://example.org/window">
+    <ns0:within rdf:resource="http://example.org/wall" />
+  </ns0:windowClass>
+</rdf:RDF>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+	<!ENTITY xml 'http://www.w3.org/XML/1998/namespace'>
+	<!ENTITY buildingimage 'http://www.example.org/malgorzata/buildingimage#01'>
+]>
+<rdf:RDF xml:base="http://www.example.org/malgorzata/buildingimage" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.example.org/malgorzata/buildingimage#" xmlns:buildingimage="http://www.example.org/malgorzata/buildingimage#01" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <owl:Ontology rdf:about="http://www.example.org/malgorzata/buildingimage">
+    <rdf:type rdf:resource="&owl;Ontology" />
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
+    <rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof" />
+    <rdfs:range rdf:nodeID="autos461" />
+    <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:nodeID="autos461">
+    <owl:unionOf rdf:nodeID="autos462" />
+  </owl:Class>
+  <rdf:Description rdf:nodeID="autos462">
+    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Wall" />
+    <rdf:rest rdf:nodeID="autos463" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="autos463">
+    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Window" />
+    <rdf:rest rdf:nodeID="autos464" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="autos464">
+    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Door" />
+    <rdf:rest rdf:resource="&rdf;nil" />
+  </rdf:Description>
+</rdf:RDF>
