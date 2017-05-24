@@ -13,8 +13,14 @@ namespace ImageRecognition.SemanticEngine
 {
     public class OntologyEngine
     {
+        public IGraph buildingOntology;
         public OntologyEngine() {
             OntologyGraph g = new OntologyGraph();
+            IGraph gr = new OntologyGraph();
+            gr.LoadFromFile("budynek1.owl");
+            IGraph gr1 = new OntologyGraph();
+            gr1.LoadFromFile("new.owl");
+
             string stringUri = "http://example.org";
             g.BaseUri = new Uri(stringUri);
             //XmlWriter xml = XmlWriter.Create("xml");
@@ -44,6 +50,7 @@ namespace ImageRecognition.SemanticEngine
             INode below = g.CreateUriNode(new Uri(stringUri + "/below"));
             INode within = g.CreateUriNode(new Uri(stringUri + "/within"));
 
+            //Create some Triples
             Triple roofAboveWall = new Triple(roof, above, wall);
             Triple roofAboveWindow = new Triple(roof, above, window);
             Triple roofAboveDoor = new Triple(roof, above, door);
@@ -58,8 +65,13 @@ namespace ImageRecognition.SemanticEngine
             g.Assert(windowWithinWall);
             //roofAboveWall.WriteXml(xml);
 
+            List<Triple> ans = (List<Triple>)g.GetTriplesWithPredicate(above);
+            Triple ans1 = ans[ans.IndexOf(roofAboveDoor)];
+
+            buildingOntology = gr1;
+            gr1.SaveToFile("building_try.rdf");
             g.SaveToFile("building.rdf");
-            //Create some Triples
+
         }
     }
 }

@@ -160,6 +160,7 @@ namespace ImageRecognition.ImageObject
                 }
             }
             OntologyEngine myOntology = new OntologyEngine();
+
             int k = 0;
         }
     }
