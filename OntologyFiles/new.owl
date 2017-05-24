@@ -12,15 +12,17 @@
 	<owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
 		<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
 		<rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof"/>
-		<rdfs:range>
-			<owl:Class>
-				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Wall"/>
-					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Window"/>
-					<rdf:Description rdf:about="http://www.example.org/malgorzata/buildingimage#Door"/>
-				</owl:unionOf>
-			</owl:Class>
-		</rdfs:range>
+		<rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Wall"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
+		<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+		<rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof"/>
+		<rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Window"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
+		<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+		<rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof"/>
+		<rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Door"/>
 	</owl:ObjectProperty>
 	
 	

@@ -13,22 +13,9 @@
   </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://www.example.org/malgorzata/buildingimage#isAbove">
     <rdfs:domain rdf:resource="http://www.example.org/malgorzata/buildingimage#Roof" />
-    <rdfs:range rdf:nodeID="autos461" />
+    <rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Door" />
+    <rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Wall" />
+    <rdfs:range rdf:resource="http://www.example.org/malgorzata/buildingimage#Window" />
     <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty" />
   </owl:ObjectProperty>
-  <owl:Class rdf:nodeID="autos461">
-    <owl:unionOf rdf:nodeID="autos462" />
-  </owl:Class>
-  <rdf:Description rdf:nodeID="autos462">
-    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Wall" />
-    <rdf:rest rdf:nodeID="autos463" />
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="autos463">
-    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Window" />
-    <rdf:rest rdf:nodeID="autos464" />
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="autos464">
-    <rdf:first rdf:resource="http://www.example.org/malgorzata/buildingimage#Door" />
-    <rdf:rest rdf:resource="&rdf;nil" />
-  </rdf:Description>
 </rdf:RDF>
